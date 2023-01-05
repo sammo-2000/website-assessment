@@ -1,0 +1,46 @@
+header a:hover,
+footer a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+header .burger {
+    cursor: pointer;
+}
+
+.index {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+
+.thank-you-link ul {
+    flex-direction: row;
+}
+
+.index a.btn:hover {
+    background-color: var(--btnHover);
+}
+
+.card a:hover {
+    background-color: var(--btnHover);
+}
+
+main form input:hover,
+main form textarea:hover {
+    background-color: rgb(245, 245, 245);
+    border-color: var(--purple);
+}
+
+main form button:hover {
+    border-color: var(--white);
+    background-color: var(--btnHover);
+}
+
+.thank-you-link ul a:hover {
+    background-color: var(--btnHover);
+}
+
+.student a:hover {
+    text-decoration: underline;
+}

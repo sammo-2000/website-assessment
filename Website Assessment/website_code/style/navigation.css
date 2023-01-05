@@ -1,0 +1,220 @@
+header {
+    background-color: var(--purple);
+    width: 100vw;
+    height: 100px;
+    position: fixed;
+    z-index: 999;
+    text-transform: uppercase;
+    box-shadow: 0px 5px 20px var(--white);
+}
+
+header img {
+    height: 100px;
+}
+
+header nav {
+    background-image: linear-gradient(white, var(--light-purple));
+    width: 100vw;
+    height: 0;
+    position: fixed;
+    top: 100px;
+    z-index: 999;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+header div {
+    padding: 30px;
+}
+
+header nav > div {
+    width: clamp(200px, 100%, 1400px);
+    margin: auto;
+}
+
+header p {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    color: var(--black);
+}
+
+header a {
+    text-decoration: none;
+    color: var(--black);
+    opacity: 0.7;
+    line-height: 25px;
+}
+
+header ul {
+    list-style: none;
+}
+
+header.active nav {
+    height: calc(100vh - 100px);
+}
+
+header .burger {
+    background-color: var(--light-purple);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100px;
+    width: 100px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+header .burger span {
+    background-color: var(--purple);
+    width: 40px;
+    height: 4px;
+    border-radius: 20px;
+    animation-duration: var(--transition);
+    transition: var(--transition);
+}
+
+header.active .burger span:nth-child(1) {
+    animation-name: span1;
+    transform: translate(0, 12px) rotate(-45deg);
+}
+
+header.active .burger span:nth-child(2) {
+    animation-name: span2;
+    transform: translate(0, 0px) rotate(0deg);
+    opacity: 0;
+}
+
+header.active .burger span:nth-child(3) {
+    animation-name: span3;
+    transform: translate(0, -12px) rotate(45deg);
+}
+
+header .desktop-link {
+    display: none;
+}
+
+@keyframes span1 {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(18px, 0px) rotate(0deg);
+        width: 4px;
+    }
+
+    50% {
+        transform: translate(12px, 0px) rotate(-45deg);
+        width: 4px;
+    }
+
+    75% {
+        transform: translate(0px, 12px) rotate(-45deg);
+        width: 40px;
+    }
+
+    100% {
+        transform: translate(0px, 12px) rotate(-45deg);
+        width: 40px;
+    }
+}
+
+@keyframes span3 {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(18px, 0px) rotate(0deg);
+        width: 4px;
+    }
+
+    50% {
+        transform: translate(12px, 0px) rotate(45deg);
+        width: 4px;
+    }
+
+    75% {
+        transform: translate(0px, -12px) rotate(45deg);
+        width: 40px;
+    }
+
+    100% {
+        transform: translate(0px, -12px) rotate(45deg);
+        width: 40px;
+    }
+}
+
+footer {
+    background-color: var(--purple);
+    padding: 200px 40px 20px 40px;
+    -webkit-mask-image: linear-gradient(transparent, white 200px);
+    mask-image: linear-gradient(transparent, white 200px);
+    color: var(--white);
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.8;
+    min-height: 40px;
+    text-transform: uppercase;
+}
+
+footer p {
+    text-transform: lowercase;
+}
+
+footer .copy {
+    text-align: center;
+    text-transform: none;
+}
+
+footer .link {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .media div {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+footer .media img {
+    height: 40px;
+    width: 40px;
+}
+
+@media only screen and (min-width: 1000px) {
+    header nav div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 150px;
+    }
+
+    header .desktop-link {
+        display: flex;
+        position: absolute;
+        top: 0px;
+        right: 100px;
+        height: 100px;
+        align-items: center;
+    }
+
+    header .desktop-link ul {
+        display: flex;
+        gap: 30px;
+    }
+
+    header .desktop-link a {
+        color: var(--white);
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        opacity: 1;
+    }
+}
